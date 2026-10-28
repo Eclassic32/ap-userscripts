@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Quick Game Links for archipelago.gg
 // @namespace    http://tampermonkey.net/
-// @version      2026-08-30
+// @version      2026-10-28
 // @description  Replaces Download Link with Game Link for specific games
 // @author       ec32
 // @match        https://archipelago.gg/room/*
@@ -32,6 +32,11 @@
         },
         'Pokepelago': (host, port, slot, pass) => {
             return [{text: "Pokepelago", link: `https://dowlle.github.io/PokepelagoClient?host=${host}&port=${port}&name=${slot}&password=${pass}`}]
+        },
+        'APBingo': (host, port, slot, pass) => {
+            return [{text: "APBingo", link: `https://cynichill.github.io/APBingoWeb/?host=${host}&port=${port}&slot=${slot}&password=${pass}`},
+                    {text: "OBS", link: `https://rawgit.moyskleytech.com/ObsidianMakerDevelopment/APBingoWeb-OBS/APBingoWeb.html?server=${host}:${port}&username=${slot}&password=${pass}`},
+                    {text: "Tracker", link: `https://cjmang.github.io/APBingoTracker/?host=${host}&port=${port}&slotName=${slot}&autoLogin=true`}]
         }
     }
 
